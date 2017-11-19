@@ -21,6 +21,8 @@ private slots:
     void on_btnExecute_clicked();
     void runScript();
 
+    void on_checkBox_stateChanged(int newState);
+
 private:
     Ui::MainWindow *ui;
     QTimer timer;

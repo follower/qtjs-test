@@ -36,3 +36,10 @@ void MainWindow::on_btnExecute_clicked()
 {
     this->runScript();
 }
+
+void MainWindow::on_checkBox_stateChanged(int newState)
+{
+    if (newState == Qt::Unchecked) {
+        this->timer.stop();
+    }
+}
