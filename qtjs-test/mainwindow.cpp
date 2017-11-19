@@ -34,7 +34,12 @@ void MainWindow::runScript() {
 
 void MainWindow::on_btnExecute_clicked()
 {
+    timer.stop();
     this->runScript();
+
+    if (ui->checkBox->isChecked()) {
+        timer.start(500);
+    }
 }
 
 void MainWindow::on_checkBox_stateChanged(int newState)
