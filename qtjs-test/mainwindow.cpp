@@ -13,8 +13,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
 
+    // TODO: Do this initialisation in `main()` and/or don't store `MainWindow`?
     AppAPI = new TheApi(this);
 
+    // TODO: Do this in `TheApi()` constructor instead?
     connect(AppAPI, SIGNAL(dialValueChanged(int)),
             this->ui->dial, SLOT(setValue(int)));
 
