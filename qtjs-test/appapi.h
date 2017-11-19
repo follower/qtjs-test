@@ -20,6 +20,7 @@ public:
 
 //    connect(this, SIGNAL(dialValueChanged(int)),
 //            this->_mainWindow->ui->dial, SLOT(setValue(int)));
+        Q_UNUSED(this->_mainWindow)
 
         TheApi::jsEngine.globalObject().setProperty("APP_HOST", "qtjs-test");
 
