@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    connect(&this->timer, SIGNAL(timeout()), this, SLOT(runScript()));
 
     // TODO: Do this initialisation in `main()` and/or don't store `MainWindow`?
     AppAPI = new TheApi(this);
