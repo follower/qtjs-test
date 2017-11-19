@@ -29,6 +29,23 @@
         <property name="verticalScrollBarPolicy">
          <enum>Qt::ScrollBarAlwaysOn</enum>
         </property>
+        <property name="plainText">
+         <string>// Press &quot;Execute&quot; to run --&gt;
+//
+// The API is:
+//
+//    APP_HOST
+//
+//    AppAPI.version
+//    AppAPI.setDial([number 0-100])
+//
+// Other Javascript is valid.
+//
+// &lt;-- Output will appear here
+//
+AppAPI.setDial(25)
+1+2</string>
+        </property>
         <property name="backgroundVisible">
          <bool>true</bool>
         </property>
