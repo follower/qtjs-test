@@ -12,14 +12,26 @@ class TheApi : public QObject
     Q_OBJECT
 public:
     TheApi(MainWindow *mainWindow) : _mainWindow(mainWindow) {
-//        connect(this, SIGNAL(dialValueChanged(int)),
-//                this->_mainWindow, SLOT(ui->dial->setValue(int)));
 
-//        connect(this, SIGNAL(dialValueChanged(int)),
-//                this->_mainWindow, SLOT(setDial(int)));
+        // It seems like there should be a nicer way to link
+        // the API to specific widgets...but I guess in reality
+        // you wouldn't want to be directly controlling them
+        // anyway...
 
-//    connect(this, SIGNAL(dialValueChanged(int)),
-//            this->_mainWindow->ui->dial, SLOT(setValue(int)));
+        // These don't work due to `ui` being private:
+
+        //    connect(this, SIGNAL(dialValueChanged(int)),
+        //            this->_mainWindow, SLOT(ui->dial->setValue(int)));
+
+        //    connect(this, SIGNAL(dialValueChanged(int)),
+        //            this->_mainWindow->ui->dial, SLOT(setValue(int)));
+
+        // This would work but it's un-ideal to have to add a new
+        // method for every case like this... (TODO: Maybe some property thing?)
+
+        //    connect(this, SIGNAL(dialValueChanged(int)),
+        //            this->_mainWindow, SLOT(setDial(int)));
+
         Q_UNUSED(this->_mainWindow)
 
         TheApi::jsEngine.globalObject().setProperty("APP_HOST", "qtjs-test");
