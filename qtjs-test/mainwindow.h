@@ -17,6 +17,7 @@ public:
 
 private slots:
     void on_btnExecute_clicked();
+    void runScript();
 
 private:
     Ui::MainWindow *ui;

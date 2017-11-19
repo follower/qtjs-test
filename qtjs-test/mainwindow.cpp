@@ -27,7 +27,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::runScript() {
+    ui->txtOutput->appendPlainText(AppAPI->evaluate(ui->editJsSource->document()->toPlainText()).toString());
+}
+
 void MainWindow::on_btnExecute_clicked()
 {
-    ui->txtOutput->appendPlainText(AppAPI->evaluate(ui->editJsSource->document()->toPlainText()).toString());
+    this->runScript();
 }
