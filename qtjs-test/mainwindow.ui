@@ -43,8 +43,10 @@
 //
 // &lt;-- Output will appear here
 //
-AppAPI.setDial(25)
-1+2</string>
+var n;
+AppAPI.setDial(n)
+n = ((n||0) + 1) % 50
+</string>
         </property>
         <property name="backgroundVisible">
          <bool>true</bool>
